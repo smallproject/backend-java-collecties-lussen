@@ -13,8 +13,8 @@ public class Main {
         Translator translate = new Translator(alphabetic, numeric);
 
         boolean play = true;
-        String ongeldig = "Ongeldig invoer";
         Scanner scanner = new Scanner(System.in);
+        String ongeldig = "Ongeldig invoer";
 
         while (play) {
             System.out.println("Type 'x' om te stoppen \nType 'v' om te vertalen");

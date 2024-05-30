@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Bonus {
@@ -10,14 +11,14 @@ public class Bonus {
         // In de code staan op verschillende plekken comments tussen "/*...*/" als hint wat je moet doen
 
 
-//        HashSet<Integer> secretnumber = randomnumbergenerator();
-//        String stringnumber = setToStringConverter(secretnumber);
+        HashSet<Integer[]> secretnumber = randomnumbergenerator();
+        String stringnumber = setToStringConverter(secretnumber);
 //        System.out.println(stringnumber);
 //        feedback(/*vul hier het juiste argument in*/);
 
     }
 
-    public static void/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
+    public static HashSet<Integer[]>/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
          /*
         Vul hier de body van de methode in.
 
@@ -27,9 +28,21 @@ public class Bonus {
         - Schrijf een while-loop om 4 random nummers aan de hashset toe te voegen
         - return de hashset
          */
+
+        Random rand = new Random();
+//        int number = rand.nextInt();
+        Integer[] number = new Integer[4];
+        int count = 0;
+        while(count < 4) {
+            number[count++] = rand.nextInt(9);
+        }
+
+        HashSet<Integer[]> setNummers = new HashSet<>();
+        setNummers.add(number);
+        return setNummers;
     }
 
-    public static void/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(/*Heeft deze methode nog parameter(s) nodig?*/){
+    public static String/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(HashSet<Integer[]> secretnumber/*Heeft deze methode nog parameter(s) nodig?*/){
         /*
         Vul hier de body van de methode in.
 
@@ -38,6 +51,15 @@ public class Bonus {
         - Schrijf vervolgens een for-loop om de items in de hashset een voor een aan de String variabele toe te voegen.
         - Return de (gevulde) String variabele
          */
+
+        StringBuilder text = new StringBuilder();
+
+//        for (HashSet<> nummers : secretnumber ) {
+//            text.append(nummers);
+//        }
+
+        return "";
+
     }
 
 
