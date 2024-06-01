@@ -11,14 +11,14 @@ public class Bonus {
         // In de code staan op verschillende plekken comments tussen "/*...*/" als hint wat je moet doen
 
 
-//        HashSet<Integer[]> secretnumber = randomnumbergenerator();
-//        String stringnumber = setToStringConverter(secretnumber);
-//        System.out.println(stringnumber);
-//        feedback(/*vul hier het juiste argument in*/);
+        HashSet<Integer> secretnumber = randomnumbergenerator();
+        String stringnumber = setToStringConverter(secretnumber);
+        System.out.println(stringnumber);
+        feedback(stringnumber/*vul hier het juiste argument in*/);
 
     }
 
-    public static HashSet<Integer[]>/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
+    public static HashSet<Integer>/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
          /*
         Vul hier de body van de methode in.
 
@@ -30,19 +30,28 @@ public class Bonus {
          */
 
         Random rand = new Random();
+        HashSet<Integer> setnumbers = new HashSet<>();
 //        int number = rand.nextInt();
-        Integer[] number = new Integer[4];
+//        Integer number = new Integer();
         int count = 0;
         while(count < 4) {
-            number[count++] = rand.nextInt(9);
+//            number[count++] = rand.nextInt(9);
+            setnumbers.add(rand.nextInt(0, 9));
+            ++count;
         }
 
-        HashSet<Integer[]> setNummers = new HashSet<>();
-        setNummers.add(number);
-        return setNummers;
+//        HashSet<Integer[]> setNummers = new HashSet<>();
+//        setNummers.add(number);
+
+//        for (var number : setnumbers) {
+//            System.out.println(number);
+//        }
+
+
+        return setnumbers;
     }
 
-    public static String/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(HashSet<Integer[]> secretnumber/*Heeft deze methode nog parameter(s) nodig?*/){
+    public static String/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(HashSet<Integer> secretnumber/*Heeft deze methode nog parameter(s) nodig?*/){
         /*
         Vul hier de body van de methode in.
 
@@ -54,12 +63,13 @@ public class Bonus {
 
         StringBuilder text = new StringBuilder();
 
-//        for (HashSet<> nummers : secretnumber ) {
-//            text.append(nummers);
-//        }
+        for (var nummers : secretnumber ) {
+            text.append(nummers);
+        }
 
-        return "";
+//        System.out.println(text);
 
+        return text.toString();
     }
 
 
