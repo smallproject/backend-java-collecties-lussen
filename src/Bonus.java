@@ -83,7 +83,7 @@ public class Bonus {
         if (Objects.equals(guess, stringnumber)) {
             System.out.println("gefeliciteerd je hebt het goed");
         } else {
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < stringnumber.length(); i++) {
                 if (guess.substring(i, i + 1).equals(stringnumber.substring(i, i + 1))) {
                     feedback.append("+");
                 } else if (stringnumber.contains(guess.substring(i, i + 1))) {
