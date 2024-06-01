@@ -8,7 +8,6 @@ public class Main {
 
         Integer[] numeric = {1,2,3,4,5,6,7,8,9,0};
         String[] alphabetic = {"een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "nul"};
-        //getallenVertalen(10);
 
         Translator translate = new Translator(alphabetic, numeric);
 
@@ -27,7 +26,7 @@ public class Main {
                 if (number < 10 && number >= 0) {
                     String result = translate.translate(number);
                     System.out.println("De vertaling van " + number + " is " + result);
-                    input = scanner.nextLine();
+                    scanner.nextLine();
                 } else {
                     System.out.println(ongeldig);
                 }
@@ -35,26 +34,5 @@ public class Main {
                 System.out.println(ongeldig);
             }
         }
-    }
-
-    private static void getallenVertalen(Integer nummer)
-    {
-        HashMap<Integer, String> getallen = new HashMap<>();
-
-        getallen.put(1,"een");
-        getallen.put(2,"twee");
-        getallen.put(3,"drie");
-        getallen.put(4,"vier");
-        getallen.put(5,"vijf");
-        getallen.put(6,"zes");
-        getallen.put(7,"zeven");
-        getallen.put(8,"acht");
-        getallen.put(9,"negen");
-        getallen.put(10,"tien");
-
-        if (getallen.containsKey(nummer)) {
-            System.out.println(getallen.get(nummer));
-        }
-
     }
 }
