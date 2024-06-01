@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Bonus {
@@ -13,11 +14,11 @@ public class Bonus {
         HashSet<Integer> secretnumber = randomnumbergenerator();
         String stringnumber = setToStringConverter(secretnumber);
         System.out.println(stringnumber);
-        feedback(/*vul hier het juiste argument in*/);
+        feedback(stringnumber/*vul hier het juiste argument in*/);
 
     }
 
-    public static void/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
+    public static HashSet<Integer>/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
          /*
         Vul hier de body van de methode in.
 
@@ -27,9 +28,30 @@ public class Bonus {
         - Schrijf een while-loop om 4 random nummers aan de hashset toe te voegen
         - return de hashset
          */
+
+        Random rand = new Random();
+        HashSet<Integer> setnumbers = new HashSet<>();
+//        int number = rand.nextInt();
+//        Integer number = new Integer();
+        int count = 0;
+        while(count < 4) {
+//            number[count++] = rand.nextInt(9);
+            setnumbers.add(rand.nextInt(0, 9));
+            ++count;
+        }
+
+//        HashSet<Integer[]> setNummers = new HashSet<>();
+//        setNummers.add(number);
+
+//        for (var number : setnumbers) {
+//            System.out.println(number);
+//        }
+
+
+        return setnumbers;
     }
 
-    public static void/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(/*Heeft deze methode nog parameter(s) nodig?*/){
+    public static String/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(HashSet<Integer> secretnumber/*Heeft deze methode nog parameter(s) nodig?*/){
         /*
         Vul hier de body van de methode in.
 
@@ -38,6 +60,16 @@ public class Bonus {
         - Schrijf vervolgens een for-loop om de items in de hashset een voor een aan de String variabele toe te voegen.
         - Return de (gevulde) String variabele
          */
+
+        StringBuilder text = new StringBuilder();
+
+        for (var nummers : secretnumber ) {
+            text.append(nummers);
+        }
+
+//        System.out.println(text);
+
+        return text.toString();
     }
 
 
@@ -51,7 +83,7 @@ public class Bonus {
         if (Objects.equals(guess, stringnumber)) {
             System.out.println("gefeliciteerd je hebt het goed");
         } else {
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < stringnumber.length(); i++) {
                 if (guess.substring(i, i + 1).equals(stringnumber.substring(i, i + 1))) {
                     feedback.append("+");
                 } else if (stringnumber.contains(guess.substring(i, i + 1))) {
